@@ -1,0 +1,725 @@
+/* Estilo General */
+:root {
+  --primary-color: #e63946;
+  --secondary-color: #1d3557;
+  --accent-color: #a8dadc;
+  --light-color: #f1faee;
+  --dark-color: #457b9d;
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  background: linear-gradient(to bottom, var(--secondary-color), var(--dark-color));
+  color: #333;
+  padding-top: 76px;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+.section-title {
+  color: var(--secondary-color);
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+/* Navbar General */
+.navbar {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  background-color: var(--secondary-color) !important;
+  padding: 10px 0;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  color: var(--light-color) !important;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--accent-color) !important;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+  width: 100%;
+}
+
+/* Header con gradiente y efectos */
+.header-container {
+  background: linear-gradient(135deg, var(--secondary-color) 0%, var(--dark-color) 100%);
+  border-radius: 15px;
+  padding: 15px;
+  margin: 20px auto;
+  max-width: 95%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.header-logos {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-gif {
+  width: 250px;
+  height: 150px;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.logo-gif:hover {
+  transform: scale(1.03);
+}
+
+/* Contenedor de Contenido Central */
+.content-container {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 30px;
+  margin: 30px auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.display-4 {
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+}
+
+.lead {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.wiphala-img {
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+/* Botones mejorados */
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  padding: 10px 25px;
+  font-weight: 600;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #c1121f;
+  border-color: #c1121f;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(198, 18, 31, 0.3);
+}
+
+/* Carrusel mejorado con altura fija */
+.carousel {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  height: 500px; /* Altura fija para el carrusel */
+}
+
+.carousel-inner {
+  height: 100%;
+}
+
+.carousel-item {
+  height: 100%;
+  transition: transform 0.6s ease-in-out;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Esto hace que la imagen cubra el espacio sin deformarse */
+}
+
+.carousel-control-prev, .carousel-control-next {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-control-prev:hover, .carousel-control-next:hover {
+  opacity: 0.9;
+}
+
+/* Sección de videos */
+.video-section {
+  background: linear-gradient(to right, var(--secondary-color), var(--dark-color));
+  border-radius: 15px;
+  padding: 30px;
+  margin: 40px 0;
+  color: white;
+  text-align: center;
+}
+
+.video-navigation .btn-nav {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  margin: 0 10px;
+  transition: all 0.3s ease;
+}
+
+.video-navigation .btn-nav:hover {
+  background-color: var(--primary-color);
+  transform: scale(1.1);
+}
+
+.wiphala-bottom {
+  max-width: 250px;
+  margin-top: 20px;
+}
+
+/* Footer mejorado */
+footer {
+  background: linear-gradient(to right, #1a1a2e, #16213e) !important;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  margin-top: 50px;
+}
+
+.footer-title {
+  color: var(--accent-color);
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.contact-info li {
+  transition: transform 0.3s ease;
+  padding: 5px 0;
+}
+
+.contact-info li:hover {
+  transform: translateX(5px);
+}
+
+.contact-info i {
+  color: var(--accent-color);
+  width: 25px;
+}
+
+.social-buttons .btn {
+   border-radius: 30px;
+  padding: 8px 20px;
+  transition: all 0.3s ease;
+  border-width: 2px;
+  font-weight: 500;
+}
+
+.social-buttons .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Color específico para TikTok al hacer hover */
+.btn-outline-dark:hover {
+  background-color: #000000;
+  border-color: #000000;
+  color: white;
+}
+
+.btn-outline-dark {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+footer hr {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn-instagram {
+  border-radius: 30px;
+  padding: 8px 20px;
+  font-weight: 500;
+  background: transparent;
+  color: #cc2366 !important;   /* tono oscuro del gradiente */
+  border: 2px solid #cc2366;   /* borde oscuro */
+  transition: all 0.3s ease;
+}
+
+.btn-instagram:hover {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  border-color: #bc1888;       /* borde coincide con el gradiente */
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(204, 35, 102, 0.5);
+  color: white !important;
+}
+
+/* Botón Threads con fondo transparente */
+.btn-threads {
+  border-radius: 30px;
+  padding: 8px 20px;
+  font-weight: 500;
+  background: transparent;
+  color: #ffffff !important;
+  border: 2px solid #ffffff;
+  transition: all 0.3s ease;
+}
+
+.btn-threads:hover {
+  background: #000000;
+  border-color: #000000;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  color: #ffffff !important;
+}
+
+/* Botón YouTube con fondo transparente */
+.btn-youtube {
+  border-radius: 30px;
+  padding: 8px 20px;
+  font-weight: 500;
+  background: transparent;
+  color: #ff0000 !important;
+  border: 2px solid #ff0000;
+  transition: all 0.3s ease;
+}
+
+.btn-youtube:hover {
+  background: #ff0000;
+  border-color: #ff0000;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 0, 0, 0.5);
+  color: #ffffff !important;
+}
+
+/* =====================
+   Reproductor de Radio
+   ===================== */
+.radio-player {
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  left: auto;
+  transform: none;
+  z-index: 1000;
+  background: linear-gradient(135deg, rgba(29,53,87,0.97) 0%, rgba(69,123,157,0.97) 100%);
+  border-radius: 60px;
+  padding: 10px 24px 10px 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  min-width: 340px;
+  cursor: grab;
+  user-select: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.radio-player:hover {
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.15);
+}
+
+.radio-player.dragging {
+  cursor: grabbing;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.2);
+  transition: none;
+}
+
+/* Info de estación */
+.rp-station-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 120px;
+}
+
+.rp-live-badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #ff4757;
+  text-transform: uppercase;
+}
+
+.rp-dot {
+  width: 7px;
+  height: 7px;
+  background: #ff4757;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: pulse-dot 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.7); }
+}
+
+.rp-name {
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.88rem;
+  line-height: 1.2;
+}
+
+.rp-location {
+  color: rgba(168, 218, 220, 0.8);
+  font-size: 0.72rem;
+}
+
+/* Botón Play/Pause */
+.rp-play-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, #e63946, #c1121f);
+  color: white;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(230, 57, 70, 0.5);
+  transition: all 0.2s ease;
+}
+
+.rp-play-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(230, 57, 70, 0.7);
+}
+
+.rp-play-btn:active {
+  transform: scale(0.94);
+}
+
+/* Barras de onda */
+.rp-wave {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 28px;
+}
+
+.rp-wave span {
+  display: block;
+  width: 3px;
+  background: var(--accent-color);
+  border-radius: 3px;
+  animation: wave-bar 1.2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.rp-wave span:nth-child(1) { height: 10px; animation-delay: 0s; }
+.rp-wave span:nth-child(2) { height: 20px; animation-delay: 0.15s; }
+.rp-wave span:nth-child(3) { height: 28px; animation-delay: 0.3s; }
+.rp-wave span:nth-child(4) { height: 20px; animation-delay: 0.45s; }
+.rp-wave span:nth-child(5) { height: 10px; animation-delay: 0.6s; }
+
+@keyframes wave-bar {
+  0%, 100% { transform: scaleY(0.35); opacity: 0.6; }
+  50% { transform: scaleY(1); opacity: 1; }
+}
+
+.rp-wave.paused span {
+  animation-duration: 3s;
+  opacity: 0.35;
+}
+
+/* Control de volumen */
+.rp-volume-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rp-vol-icon {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: color 0.2s;
+  width: 16px;
+  text-align: center;
+}
+
+.rp-vol-icon:hover {
+  color: #ffffff;
+}
+
+.rp-volume {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 80px;
+  height: 4px;
+  background: rgba(255,255,255,0.25);
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+
+.rp-volume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+  transition: transform 0.15s;
+}
+
+.rp-volume::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.rp-volume::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: none;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+
+/* Efectos de nieve mejorados */
+@keyframes snowflakes-fall {
+  0% { top: -10% }
+  100% { top: 100% }
+}
+
+@keyframes snowflakes-shake {
+  0%, 100% { transform: translateX(0) }
+  50% { transform: translateX(80px) }
+}
+
+.snowflake {
+  color: #fff;
+  font-size: 1.5em;
+  position: fixed;
+  top: -10%;
+  z-index: 9999;
+  user-select: none;
+  cursor: default;
+  animation-name: snowflakes-fall, snowflakes-shake;
+  animation-duration: 10s, 3s;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  animation-play-state: running, running;
+}
+
+/* ============================
+   Decoración Fiestas Patrias
+   ============================ */
+@keyframes patria-fall {
+  0% { top: -10%; }
+  100% { top: 100%; }
+}
+
+@keyframes patria-shake {
+  0%, 100% { transform: translateX(0) rotate(-8deg); }
+  50% { transform: translateX(70px) rotate(8deg); }
+}
+
+.patria-confeti {
+  position: fixed;
+  top: -10%;
+  z-index: 9999;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+  animation-name: patria-fall, patria-shake;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+}
+
+/* Guirnalda de banderines bajo el navbar */
+.patria-bunting {
+  position: fixed;
+  top: 76px;
+  left: 0;
+  width: 100%;
+  height: 34px;
+  z-index: 1030;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='34'%3E%3Cline x1='0' y1='3' x2='120' y2='3' stroke='%235c3a21' stroke-width='2'/%3E%3Cpolygon points='6,3 34,3 20,28' fill='%23e63946'/%3E%3Cpolygon points='46,3 74,3 60,28' fill='%23f1faee' stroke='%23cccccc' stroke-width='0.5'/%3E%3Cpolygon points='86,3 114,3 100,28' fill='%230033a0'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: top center;
+  background-color: rgba(29, 53, 87, 0.35);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+}
+
+body.fiestas-patrias {
+  padding-top: 110px;
+}
+
+.fiestas-patrias-badge {
+  display: none;
+}
+
+body.fiestas-patrias .fiestas-patrias-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--primary-color);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 8px 18px;
+  border-radius: 30px;
+  margin-top: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  animation: patria-badge-pop 0.6s ease;
+}
+
+@keyframes patria-badge-pop {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Clima Container */
+#climaContainer {
+  font-size: 1rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#climaContainer h4 {
+  margin-bottom: 5px;
+  color: var(--accent-color);
+}
+
+#climaContainer p {
+  margin: 2px 0;
+  line-height: 1.1;
+}
+
+/* Responsividad mejorada */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .header-logos {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .logo-gif {
+    width: 130px;
+    height: 90px;
+    margin-bottom: 15px;
+  }
+  
+  .radio-player {
+    bottom: 0;
+    left: 0 !important;
+    right: 0 !important;
+    top: auto !important;
+    transform: none !important;
+    border-radius: 20px 20px 0 0;
+    padding: 14px 20px;
+    min-width: unset;
+    width: 100%;
+    gap: 12px;
+    justify-content: space-between;
+    cursor: default;
+  }
+
+  .rp-station-info {
+    min-width: unset;
+    flex: 1;
+  }
+
+  .rp-volume-wrap {
+    display: none;
+  }
+
+  .content-container {
+    padding: 20px 15px;
+  }
+  
+  .display-4 {
+    font-size: 2rem;
+  }
+
+  .fiestas-patrias-badge {
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 8px 14px;
+    border-radius: 16px;
+    line-height: 1.3;
+  }
+
+  /* Carrusel responsive */
+  .carousel {
+    height: 350px; /* Altura menor en dispositivos móviles */
+  }
+  
+  audio {
+    min-width: unset;
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel {
+    height: 300px;
+  }
+
+  .radio-player {
+    padding: 12px 16px;
+    gap: 10px;
+  }
+
+  .logo-gif {
+    width: 100px;
+    height: 70px;
+  }
+}
